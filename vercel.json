@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://www.betfairbets.live/:path*",
+      "hasSourceField": false
+    }
+  ]
+}
