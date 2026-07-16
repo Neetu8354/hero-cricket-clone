@@ -15,7 +15,7 @@ type Props = {
   locale?: string;
 };
 
-const SITE_URL = "https://betfairbets.live";
+const SITE_URL = "https://www.betfairbets.live";
 const DEFAULT_IMG = `/og-default.jpg`;
 
 const absUrl = (path: string) =>
