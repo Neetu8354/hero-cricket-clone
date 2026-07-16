@@ -3,7 +3,18 @@
     {
       "source": "/:path*",
       "destination": "https://www.betfairbets.live/:path*",
-      "hasSourceField": false
+      "has": [
+        {
+          "type": "host",
+          "value": "betfairbets.live"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
