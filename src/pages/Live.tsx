@@ -19,7 +19,7 @@ const Live = () => (
         orgJsonLd,
         breadcrumbJsonLd([
           { name: "Home", url: "/" },
-          { name: "Live Scores", url: "/live" },
+          { name: "Live", url: "/live" },
         ]),
       ]}
     />
