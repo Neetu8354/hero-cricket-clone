@@ -131,12 +131,37 @@ export const Seo = ({
 export const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "Betfair Bets",
-  alternateName: "Betfair Bets Live Cricket Hub",
-  url: SITE_URL,
-  logo: `${SITE_URL}/og-default.jpg`,
-  sameAs: [],
-  description: "India's premium cricket stats, predictions and community hub.",
+  alternateName: ["BetfairBets", "Betfair Bets India", "Betfair Exchange", "Betfair Betting"],
+  url: `${SITE_URL}/`,
+  image: `${SITE_URL}/og-default.jpg`,
+  description:
+    "Betfair Bets is a trusted online cricket betting and casino platform in India offering cricket betting, sports betting, live casino games, Teen Patti, Aviator, and secure online gaming with fast registration, instant withdrawals, and 24/7 customer support.",
+  sameAs: ["https://wa.link/reddyanna_"],
+  knowsAbout: [
+    "Cricket Betting",
+    "Sports Betting",
+    "Live Casino",
+    "Teen Patti",
+    "Aviator Game",
+    "Online Gaming",
+    "Cricket Exchange",
+  ],
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/og-default.jpg`,
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Customer Support",
+    url: "https://wa.link/reddyanna_",
+    availableLanguage: ["English", "Hindi"],
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "India",
+  },
 };
 
 export const websiteJsonLd = {
