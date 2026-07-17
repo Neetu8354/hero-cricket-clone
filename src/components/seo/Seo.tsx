@@ -152,15 +152,22 @@ export const websiteJsonLd = {
   },
 };
 
-export const breadcrumbJsonLd = (items: { name: string; url: string }[]) => ({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: items.map((it, i) => ({
-    "@type": "ListItem",
-    position: i + 1,
-    name: it.name,
-    item: it.url.startsWith("http") ? it.url : `${SITE_URL}${it.url}`,
-  })),
-});
+export const breadcrumbJsonLd = (items: { name: string; url: string }[]) => {
+  const lastItemUrl = items.length > 0 
+    ? (items[items.length - 1].url.startsWith("http") ? items[items.length - 1].url : `${SITE_URL}${items[items.length - 1].url}`)
+    : SITE_URL;
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${lastItemUrl}#breadcrumb`,
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      item: it.url.startsWith("http") ? it.url : `${SITE_URL}${it.url}`,
+    })),
+  };
+};
 
 export { SITE_URL };
