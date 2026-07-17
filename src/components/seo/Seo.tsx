@@ -178,14 +178,15 @@ export const websiteJsonLd = {
 };
 
 export const breadcrumbJsonLd = (items: { name: string; url: string }[]) => {
-  const lastItemUrl = items.length > 0 
+  const lastItemUrl = items.length > 0
     ? (items[items.length - 1].url.startsWith("http") ? items[items.length - 1].url : `${SITE_URL}${items[items.length - 1].url}`)
     : SITE_URL;
-  
+  const breadcrumbId = lastItemUrl === SITE_URL ? `${SITE_URL}/#breadcrumb` : `${lastItemUrl}#breadcrumb`;
+
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "@id": `${lastItemUrl}#breadcrumb`,
+    "@id": breadcrumbId,
     itemListElement: items.map((it, i) => ({
       "@type": "ListItem",
       position: i + 1,
